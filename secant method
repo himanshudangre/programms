@@ -1,0 +1,15 @@
+from math import*
+def f(x):
+    return x**3-20
+m=0
+a=2
+b=3
+def l(a,b):
+    return b-f(b)*((b-a)/(f(b)-f(a)))
+while((abs((b-a)/b))>=0.0001):
+    a,b=b,l(a,b)
+    m+=1
+else:
+    print("The root is ","%.4f"%l(a,b))
+    print("The number iterations are ",m)
+    print("The error of convergence is",abs((b-a)/b))
